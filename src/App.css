@@ -1,0 +1,44 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes verticalMarquee {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+  }
+  
+  .vertical-marquee {
+    height: 180vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .vertical-marquee span {
+    display: block;
+    position: absolute;
+    animation: verticalMarquee 10s linear infinite;
+    writing-mode: vertical-rl; /* This makes the text vertical */
+    transform: rotate(180deg); /* This flips the vertical text to read bottom-to-top */
+  }
+  .vertical-marquee {
+    position: relative;
+  }
+  
+  .animate-marquee {
+    position: absolute;
+    top: 0;
+    animation: marquee 10s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
